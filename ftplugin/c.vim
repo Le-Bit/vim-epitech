@@ -1,9 +1,9 @@
 filetype plugin indent on
 
 setlocal cindent
+setlocal colorcolumn=80
 setlocal shiftwidth=2
 setlocal softtabstop=8
 setlocal tabstop=8
 
-match ExtraWhitespace /\s\+$/
-highlight ExtraWhitespace ctermbg=red
+let c_space_errors = 1
