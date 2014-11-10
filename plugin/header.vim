@@ -52,7 +52,7 @@ function InsertFirst()
   call inputsave()
   let proj_name = input('Enter project name: ')
   call inputrestore()
-  1,10s/µFILENAMEµ/\= bufname("%")/ge
+  1,10s/µFILENAMEµ/\= expand('%:t')/ge
   1,10s/µPATHFILEµ/\= expand("%:p:h")/ge
   1,10s/µLOGINµ/\= g:epi_login/ge
   1,10s/µNAMEµ/\= g:epi_name/ge
