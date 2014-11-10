@@ -9,7 +9,8 @@ let s:comMap = {
             \}
 
 function GetFullName()
-    return system('getent passwd $USER | cut -d : -f 5')
+    let val = system('getent passwd $USER | cut -d: -f5')
+    return substitute(val, '\n$', '', '')
 endfunction
 
 function HasHeader()
