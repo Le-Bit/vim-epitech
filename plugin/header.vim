@@ -25,8 +25,13 @@ function PutHeader()
     return
   endif
 
+  " FIXME factorize error messages
   if !has_key(s:comMap, &filetype)
       echoerr "Epitech header: Unsupported filetype: " . &filetype
+      return
+  endif
+  if empty(g:epi_name)
+      echoerr "Epitech header: Name not defined"
       return
   endif
 
@@ -80,7 +85,7 @@ if !exists('g:epi_login')
     let g:epi_login = expand($USER)
 endif
 
-if !exists('g:epi_name')
+if !exists('g:epi_name') || empty(g:epi_name)
     let g:epi_name = GetFullName()
 endif
 
