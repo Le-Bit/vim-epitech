@@ -95,8 +95,7 @@ endif
 
 map <C-c><C-h> <Esc>:call PutHeader()<CR>
 
-autocmd FileWritePre,BufWritePre *.c,*.h,*.cpp,*.hh,*.hpp,Makefile call UpdateTimeHeader()
-autocmd FileWritePre,BufWritePre *.c,*.h,*.cpp,*.hh,*.hpp,Makefile call UpdateHeader()
+autocmd FileWritePre,BufWritePre * call UpdateTimeHeader()
 
 if g:header_auto == 1
   autocmd BufNewFile *.c,*.h,*.cpp,*.hh,*.hpp,Makefile call PutHeader()
