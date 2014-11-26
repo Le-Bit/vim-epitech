@@ -9,15 +9,13 @@ let s:comMap = {
             \}
 
 function GetFullName()
-    let val = system('getent passwd $USER | cut -d: -f5')
-    return substitute(val, '\n$', '', '')
+    let l:val = system('getent passwd $USER | cut -d: -f5')
+    return substitute(l:val, '\n$', '', '')
 endfunction
 
 function HasHeader()
-  let l:save_cursor = getpos(".")
-  let l:ret = search('Last update \w\+ \w\+ \d\+ \d\+:\d\+:\d\+ \d\+')
-  call setpos('.', l:save_cursor)
-  return l:ret
+    let l:val = search('^.\{2} Last update ', 'cnw')
+    return l:val > 0 && l:val < 10
 endfunction
 
 function PutHeader()
@@ -25,7 +23,7 @@ function PutHeader()
     return
   endif
 
-  " FIXME factorize error messages
+  " FIXME Factorize error messages
   if !has_key(s:comMap, &filetype)
       echoerr "Epitech header: Unsupported filetype: " . &filetype
       return
