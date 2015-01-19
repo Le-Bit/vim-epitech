@@ -2,6 +2,7 @@ filetype plugin indent on
 
 setlocal cindent
 setlocal colorcolumn=80
+setlocal comments=s:/*,m:**,ex:*/
 setlocal shiftwidth=2
 setlocal softtabstop=8
 setlocal tabstop=8
