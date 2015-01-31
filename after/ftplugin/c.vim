@@ -9,6 +9,7 @@ setlocal tabstop=8
 
 let c_space_errors = 1
 
-" Configure Syntastic and YCM
 let g:syntastic_c_checkers = ['epitech']
+let g:syntastic_check_on_open = 1
+":h youcompleteme-why-did-ycm-stop-using-syntastic-for-diagnostics-display
 let g:ycm_show_diagnostics_ui = 0

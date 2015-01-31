@@ -15,14 +15,23 @@ function! SyntaxCheckers_c_epitech_IsAvailable() dict
 endfunction
 
 function! SyntaxCheckers_c_epitech_GetLocList() dict
-    return [{}]
+    let makeprg = self.makeprgBuild({})
+
+    let errorformat =
+        \ '%W%f:%l: warning: %m,'.
+        \ '%E%f:%l:%c:%m,'.
+        \ '%-G%.%#'
+
+    return SyntasticMake({
+                \ 'makeprg': makeprg,
+                \ 'errorformat': errorformat })
 endfunction
 
 let s:moulinorme = expand('<sfile>:p:h').'/norme.pl'
 call g:SyntasticRegistry.CreateAndRegisterChecker({
             \ 'filetype': 'c',
             \ 'name': 'epitech',
-            \ 'exec': s:moulinorme})
+            \ 'exec': s:moulinorme })
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
