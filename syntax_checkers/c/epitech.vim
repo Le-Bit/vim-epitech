@@ -3,18 +3,14 @@ if exists('g:loaded_syntastic_epitech_c_checker')
 endif
 let g:loaded_syntastic_epitech_c_checker = 1
 
-if !exists('g:syntastic_c_compiler_options')
-    let g:syntastic_c_compiler_options = '-std=c89 -Wall -Wextra'
-endif
-
 let s:save_cpo = &cpo
 set cpo&vim
 
 function! SyntaxCheckers_c_epitech_IsAvailable() dict
-    return executable('perl') && executable(self.getExec())
+    return executable(self.getExec())
 endfunction
 
-function! SyntaxCheckers_c_epitech_GetLocList() dict
+function! SyntaxCheckers_c_epinorme_GetLocList() dict
     let makeprg = self.makeprgBuild({})
 
     let errorformat =
@@ -27,11 +23,13 @@ function! SyntaxCheckers_c_epitech_GetLocList() dict
                 \ 'errorformat': errorformat })
 endfunction
 
-let s:moulinorme = expand('<sfile>:p:h').'/norme.pl'
-call g:SyntasticRegistry.CreateAndRegisterChecker({
+let checker = {
             \ 'filetype': 'c',
-            \ 'name': 'epitech',
-            \ 'exec': s:moulinorme })
+            \ 'name': 'epinorme'}
+if exists('g:epitech_checker_bin')
+    let checker.exec = g:epitech_checker_bin
+endif
+call g:SyntasticRegistry.CreateAndRegisterChecker(checker)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
