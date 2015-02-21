@@ -15,4 +15,13 @@ For your name, it is fetched from your `finger` information (_Full name_ field).
 
 ## Checker
 
-By default the checker is called with `epinorme <file>`. Program used can be override with `g:epitech_checker_bin`.
+By default the checker is called with `epinorme <file>`. Program used can be override with `g:epitech_checker_bin`. Just give the path to your script.
+
+##  Syntastic
+
+If you want to make your own norm script interact  with syntastic, it must take the filename as argument
+And give the following output on stderr:
+    filename:line:collumn:error description
+
+You can use the following script:
+    https://github.com/LeBarbu/Moulinette-Norme-Epitech-Ruby
