@@ -15,6 +15,7 @@ For your name, it is fetched from your `finger` information (_Full name_ field).
 
 ## Checker
 
+You can call the checker with the command `:EpiNormeCheck`.
 By default the checker is called with `epinorme <file>`. Program used can be override with `g:epitech_checker_bin`. Just give the path to your script.
 
 ##  Syntastic
