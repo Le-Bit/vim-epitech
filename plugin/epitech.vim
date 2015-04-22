@@ -30,5 +30,5 @@ augroup epitech
 augroup END
 
 
-nnoremap <Leader>n :<C-U>EpiNormeCheck<CR>
-nnoremap <Leader>h :<C-U>EpiHeader<CR>
+nmap <Leader>n :<C-U>EpiNormeCheck<CR>
+nmap <Leader>h :<C-U>EpiHeader<CR>
