@@ -4,11 +4,6 @@ let s:comMap = {
             \ 'make': {'b': '##', 'm': '##', 'e': '##'},
             \}
 
-function! s:HasHeader()
-    let l:val = search('^.\{2} Last update ', 'cnw')
-    return l:val > 0 && l:val < 10
-endfunction
-
 function! s:InsertFirst()
     call inputsave()
     let proj_name = input('Enter project name: ')
@@ -27,8 +22,13 @@ function! s:IsSupportedFt()
     return has_key(s:comMap, &filetype)
 endfunction
 
+function! epitech#header#IsPresent()
+    let l:val = search('^.\{2} Last update ', 'cnw')
+    return l:val > 0 && l:val < 10
+endfunction
+
 function! epitech#header#Put()
-    if s:HasHeader() > 0
+    if epitech#header#IsPresent() > 0
         return
     endif
 
@@ -60,7 +60,7 @@ function! epitech#header#Update()
         return
     endif
 
-    if s:HasHeader() > 0
+    if epitech#header#IsPresent() > 0
         let save_cursor = getpos(".")
         1,10s/\(.*\) Last update .*/\1 Last update µLASTUPDATEµ µLOGINLASTµ/ge
         1,10s/µLOGINLASTµ/\= g:epi_name/ge
