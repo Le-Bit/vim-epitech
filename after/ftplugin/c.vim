@@ -10,7 +10,7 @@ setlocal softtabstop=8
 setlocal tabstop=8
 
 setlocal cindent
-if get(g:, "epitech_mode_emacs")
+if get(g:, "epitech_mode_emacs") || (get(g:, "epitech_mode_auto") && epitech#header#IsPresent())
     setlocal cinoptions={1s,>2s,e-1s,^-1s,n-1s,:1s,p5,i4,(0,u0,W1s
 else
     setlocal cinoptions=
