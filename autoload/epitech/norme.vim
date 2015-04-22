@@ -1,7 +1,7 @@
 " Return the path of the norme checker
 function! epitech#norme#GetChecker()
-    if exists('g:epitech_checker_bin')
-        return g:epitech_checker_bin
+    if exists('g:epi_checker_bin')
+        return g:epi_checker_bin
     else
         return 'epinorme'
     endif

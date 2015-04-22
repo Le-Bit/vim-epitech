@@ -17,18 +17,13 @@ For your name, it is fetched from your `finger` information (_Full name_ field).
 
 ## Indentation
 
-You can use the same indentation as emacs do by using `let g:epi_mode_emacs = 1` in your `.vimrc`. Alternatively you can have emacs indentation only for Epitech's files (having a valid header) with `let g:epi_mode_auto = 1`.
+You can use the exact same indent style as emacs (the GNU one, for more info : http://en.wikipedia.org/wiki/Indent_style#GNU_style ) by using `let g:epi_mode_emacs = 1` in your `.vimrc`. Alternatively you can have emacs indentation only for Epitech's files (having a valid header) with `let g:epi_mode_auto = 1`.
 
 ## Checker
 
 You can call the checker with the command `:EpiNormeCheck`.
-By default the checker is called with `epinorme <file>`. Program used can be override with `g:epitech_checker_bin`. Just give the path to your script.
+By default the checker is called with `epinorme <file>`. Program used can be override with `g:epi_checker_bin`. Just give the path to your script.
 You can then see the error report with `<Leader>n`
-
-## Indent
-
-If you want to have the exact same indent style as emacs (the GNU one, for more info : http://en.wikipedia.org/wiki/Indent_style#GNU_style )
-You can override the vim defaults with `let g:epi_indent = 1`
 
 ##  Syntastic
 
