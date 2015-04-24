@@ -7,7 +7,7 @@ An all-in-one configuration to ease (n)vim usage at Epitech.
 
 To install the plugin, just run :
 ```
-  git clone https://github.com/GNUletik/vim-epitech.git ~/.vim
+  git clone https://github.com/LeBarbu/vim-epitech.git ~/.vim
 ```
 (If you already have a .vim directory, it will be overwritten !)
 
