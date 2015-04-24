@@ -3,9 +3,17 @@ vim-epitech
 
 An all-in-one configuration to ease (n)vim usage at Epitech.
 
+## Installation
+
+To install the plugin, just run :
+```
+  git clone https://github.com/GNUletik/vim-epitech.git ~/.vim
+```
+(If you already have a .vim directory, it will be overwritten !)
+
 ## Headers
 
-You can add Epitech headers to your files with `<Leader>h`
+You can add Epitech headers to your files with `<Leader>h` (Default leader mapping is '\')
 
 ### Login
 
@@ -23,7 +31,7 @@ You can use the exact same indent style as emacs (the GNU one, for more info : h
 
 You can call the checker with the command `:EpiNormeCheck`.
 By default the checker is called with `epinorme <file>`. Program used can be override with `g:epi_checker_bin`. Just give the path to your script.
-You can then see the error report with `<Leader>n`
+You can then see the error report with `<Leader>n` (Default leader mapping is '\')
 
 ##  Syntastic
 
