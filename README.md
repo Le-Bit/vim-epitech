@@ -5,11 +5,14 @@ An all-in-one configuration to ease (n)vim usage at Epitech.
 
 ## Installation
 
-To install the plugin, just run :
+If you use https://github.com/junegunn/vim-plug
+add the line
 ```
-  git clone https://github.com/LeBarbu/vim-epitech.git ~/.vim
+Plug 'LeBarbu/vim-epitech'
 ```
-(If you already have a .vim directory, it will be overwritten !)
+to your .vimrc
+
+You can of course use the plugin manager that you like
 
 ## Headers
 
