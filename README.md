@@ -13,7 +13,8 @@ To install the plugin, just run :
 
 ## Headers
 
-You can add Epitech headers to your files with `<Leader>h` (Default leader mapping is '\')
+You can add Epitech headers to your files with `<Leader>h` (Default leader mapping is '\').
+You can disable the auto-updated header when saving a file by setting `let g:header_update = 0` in your .vimrc.
 
 ### Login
 
@@ -31,7 +32,7 @@ You can use the exact same indent style as emacs (the GNU one, for more info : h
 
 You can call the checker with the command `:EpiNormeCheck`.
 By default the checker is called with `epinorme <file>`. Program used can be override with `g:epi_checker_bin`. Just give the path to your script.
-You can then see the error report with `<Leader>n` (Default leader mapping is '\')
+You can then see the error report with `<Leader>n` (Default leader mapping is '\').
 
 ##  Syntastic
 
