@@ -16,6 +16,10 @@ if !exists('g:header_auto')
   let g:header_auto = 0
 endif
 
+if !exists('g:header_update')
+  let g:header_update = 1
+endif
+
 " FIXME document commands
 command! EpiNormeCheck call epitech#norme#Check()
 command! EpiHeader call epitech#header#Put()
@@ -23,7 +27,9 @@ command! EpiHeader call epitech#header#Put()
 augroup epitech
     autocmd!
 
-    autocmd FileWritePre,BufWritePre * call epitech#header#Update()
+    if g:header_update == 1
+      autocmd FileWritePre,BufWritePre * call epitech#header#Update()
+    endif
     if g:header_auto == 1
         autocmd BufNewFile * call epitech#header#Put()
     endif
