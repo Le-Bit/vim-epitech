@@ -4,6 +4,14 @@ let s:comMap = {
             \ 'make': {'b': '##', 'm': '##', 'e': '##'},
             \}
 
+function! s:Epistrtime()
+    let old_time = v:lc_time
+    language time en_US
+    let str = strftime("%a %b %d %T %Y")
+    exec 'language time '.old_time
+    return str
+endfunction
+
 function! s:InsertFirst()
     call inputsave()
     let proj_name = input('Enter project name: ')
@@ -13,8 +21,8 @@ function! s:InsertFirst()
     1,10s/µLOGINµ/\= g:epi_login/ge
     1,10s/µNAMEµ/\= g:epi_name/ge
     1,10s/µPROJECTNAMEµ/\= proj_name/ge
-    1,10s/µCREATDAYµ/\= strftime("%a %b %d %T %Y")/ge
-    1,10s/µLASTUPDATEµ/\= strftime("%a %b %d %T %Y")/ge
+    1,10s/µCREATDAYµ/\= s:Epistrtime()/ge
+    1,10s/µLASTUPDATEµ/\= s:Epistrtime()/ge
     1,10s/µLOGINLASTµ/\= g:epi_name/ge
 endfunction
 
@@ -64,7 +72,7 @@ function! epitech#header#Update()
         let save_cursor = getpos(".")
         1,10s/\(.*\) Last update .*/\1 Last update µLASTUPDATEµ µLOGINLASTµ/ge
         1,10s/µLOGINLASTµ/\= g:epi_name/ge
-        1,10s/µLASTUPDATEµ/\= strftime("%a %b %d %T %Y")/ge
+        1,10s/µLASTUPDATEµ/\= s:Epistrtime()/ge
         call setpos('.', save_cursor)
     endif
 endfunction
