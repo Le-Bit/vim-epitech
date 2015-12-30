@@ -1,3 +1,8 @@
+" Vim sources ftplugin scripts for c too for cpp files. What a good idea! Or is it?
+if (&ft != 'c')
+    finish
+endif
+
 filetype plugin indent on
 
 setlocal cindent
