@@ -20,6 +20,14 @@ if !exists('g:header_update')
   let g:header_update = 1
 endif
 
+" This is used to remove blank lines containing numbers 
+" when copy/pasting epitech subject
+fu! EpitechCleaner()
+  :g/^[ \t]*\d\+$/d
+endfunction
+
+command! EpiCleaner call EpitechCleaner()
+
 " FIXME document commands
 command! EpiNormeCheck call epitech#norme#Check()
 command! EpiHeader call epitech#header#Put()

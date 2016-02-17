@@ -46,3 +46,13 @@ And give the following output on stderr:
 You can use the following scripts:
     https://github.com/casimir/epinorme
     https://github.com/LeBarbu/Moulinette-Norme-Epitech-Ruby
+
+## Cleaning file when copy/pasting code in epitech subject
+
+Because of Epitech's PDF format, pasting part of code from a Epitech PDF will result in a bad formatted file (because of line numbers in PDF).
+
+You can do
+
+`:EpiCleaner`
+
+in vim to clean your pasted file.
