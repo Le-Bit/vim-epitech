@@ -6,7 +6,7 @@ let s:comMap = {
 
 function! s:Epistrtime()
     let old_time = v:lc_time
-    language time en_US
+    language time en_US.utf-8
     let str = strftime("%a %b %d %T %Y")
     exec 'language time '.old_time
     return str
